@@ -1,8 +1,7 @@
-package ft.portfolio.api;
+package ft.portfolio.api.portfolio;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import ft.portfolio.api.user.User;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,9 +21,21 @@ public class Portfolio {
     @Id
     private String id;
 
-    private String ticker;
+    @ManyToOne
+    @JoinColumn(name = "USER_ID")
+    private User user;
 
-    private LocalDate date;
+    @Column
+    private String symbol;
 
+    @Column
+    private LocalDate dateOfBuy;
+
+    @Column
     private BigDecimal price;
+
+    @Column
+    private Double amount;
+
+
 }

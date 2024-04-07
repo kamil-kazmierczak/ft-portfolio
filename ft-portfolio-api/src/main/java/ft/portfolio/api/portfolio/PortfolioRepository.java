@@ -1,4 +1,4 @@
-package ft.portfolio.api;
+package ft.portfolio.api.portfolio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
